@@ -74,6 +74,8 @@ public final class LoginSystem {
         } catch (IOException e) {
             System.err.printf("Error writing to user or password file: %s%n", e.getMessage());
         }
+
+        return true;
     }
 
     private static final class EncryptionUtil {
