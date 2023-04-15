@@ -70,7 +70,7 @@ public final class LoginSystem {
         try (BufferedWriter userWriter = new BufferedWriter(new FileWriter(USERNAME_FILE_PATH, true));
              BufferedWriter passWriter = new BufferedWriter(new FileWriter(PASSWORD_FILE_PATH, true))) {
             userWriter.write(username + "\n");
-            passWriter.writer(hashedPassword + "\n");
+            passWriter.write(hashedPassword + "\n");
         } catch (IOException e) {
             System.err.printf("Error writing to user or password file: %s%n", e.getMessage());
         }
@@ -94,5 +94,9 @@ public final class LoginSystem {
                 sb.append(String.format("%02x", b & 0xff));
             return sb.toString();
         }        
+    }
+
+    public static void main(String[] args) {
+        createUser("hello", "$aBcdefghijklmnopq");
     }
 }
