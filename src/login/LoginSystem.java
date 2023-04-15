@@ -72,7 +72,7 @@ public final class LoginSystem {
             userWriter.write(username + "\n");
             passWriter.writer(hashedPassword + "\n");
         } catch (IOException e) {
-            System.err.printf("Error writing to user or password file: %s%n", e.getMessage())''
+            System.err.printf("Error writing to user or password file: %s%n", e.getMessage());
         }
     }
 
