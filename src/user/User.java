@@ -17,11 +17,6 @@ public class User implements java.io.Serializable {
         this.team = null;
     }
 
-    /* methods */
-    public void writeInformation() {
-        
-    }
-
     /* getters */
     public String getUsername() {
         return this.USERNAME;
