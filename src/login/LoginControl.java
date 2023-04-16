@@ -14,8 +14,7 @@ public final class LoginControl {
     private static final int MAX_LOGIN_ATTEMPTS = 4;
 
     //  method to handle the login/creation of an account
-    public static User runCLI() {
-        Console console = System.console();
+    public static User runCLI(Console console) {
 
         if (console == null) {
             System.err.printf("Console not available");
@@ -30,16 +29,16 @@ public final class LoginControl {
     //  method to see what the user wants to do
     private static User getAction(Console console) {
         console.printf("What would you like to do:%n");
-        console.printf("1. Create a new account%n2. Log in to an existing account%n3. Exit the program%n%n");
+        console.printf("1. Log into an existing account%n2. Create a new account%n3. Exit the program%n%n");
 
         String input = console.readLine("Enter your choice: ");
 
         switch (input) {
             case "1" -> {
-                return createUser(console);
+                return login(console);
             }
             case "2" -> {
-                return login(console);
+                return createUser(console);
             }
             case "3" -> {
                 System.exit(0);

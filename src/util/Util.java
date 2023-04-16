@@ -56,4 +56,31 @@ public final class Util {
             return null;
         }
     }
+
+    //  method to format enum names
+    public static String formatEnumTeamName(Enum<?> value) {
+        String name = value.name();
+
+        name = name.toLowerCase().replace('_', ' ');
+        String[] words = name.split(" ");
+
+        StringBuilder sb = new StringBuilder();
+        for (String word : words) {
+            sb.append(Character.toUpperCase(word.charAt(0)));
+            sb.append(word.substring(1));
+            sb.append(" ");
+        }
+
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
+    }
+
+    //  method to sleep and pause the program
+    public static void sleep(long milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            System.err.printf("Error sleeping the program: %s%n", e.getMessage());
+        }
+    }
 }

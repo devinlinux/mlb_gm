@@ -37,4 +37,9 @@ public class Team implements java.io.Serializable {
     public String getRecord() {
         return String.format("%d-%d", this.wins, this.losses);
     }
+
+    /* toString */
+    public String toString() {
+        return this.getFullName();
+    }
 }
