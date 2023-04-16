@@ -84,8 +84,8 @@ public final class Util {
         }
     }
 
-    //  method to prepare the console
-    public static void prepareConsole() {
+    //  method to clear the console
+    public static void clearConsole() {
         String os = System.getProperty("os.name").toLowerCase();
 
         try {
