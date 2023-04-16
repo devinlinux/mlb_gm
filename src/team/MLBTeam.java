@@ -1,6 +1,6 @@
 package team;
 
-public enum MLBTeam implements java.io.Serializable {
+public enum MLBTeam {
     CHICAGO_WHITE_SOX("Chicago", "White Sox"),
     CLEVELAND_GUARDIANS("Cleveland", "Guardians"),
     DETROIT_TIGERS("Detroit", "Tigers"),
