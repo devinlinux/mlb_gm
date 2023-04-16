@@ -4,6 +4,7 @@ package login;
 import java.io.Console;
 
 import user.User;
+import util.Util;
 
 public final class LoginControl {
 
@@ -82,6 +83,8 @@ public final class LoginControl {
                     case "2" -> {
                         password = PasswordUtils.genPassword();
                         console.printf("Your password is: %s%n", password);
+                        console.printf("Please remember your password, program will resume in 10 seconds%n");
+                        Util.sleep(10000);
                         satisfied = true;
                         break;
                     }
