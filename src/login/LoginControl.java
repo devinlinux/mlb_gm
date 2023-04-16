@@ -136,8 +136,4 @@ public final class LoginControl {
         console.printf("Successfully logged in, welcome%n");
         return user;
     }
-
-    public static void main(String[] args) {
-        run();
-    }
 }
