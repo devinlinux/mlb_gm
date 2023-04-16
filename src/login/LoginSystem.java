@@ -18,7 +18,7 @@ public final class LoginSystem {
     /* method to create account */
     private static final String USERNAME_FILE_PATH = "data/users/usernames.dat";
     private static final String PASSWORD_FILE_PATH = "data/users/passwords.dat";
-    private static final String SALT = "×£õ¯ýQÐÑNòí²¸F8ô_ÇB{¨ÙÖ)®+F*E´T¤Y¬XÚa.fL]ÿH®ÊAPÊ½UþÍm]ÐÆÐß`-ÚRck%âÅÔÞdÙ_Í§½ËcrªtÕU{»ä8×ÌBoÛíñíÏ¸bí¿%Ö['T2ÈqÌþªtqæx!¯ßp(¯ìÒÀ¢Å*÷+";
+    private static final String SALT = SaltReader.readSalt("resources/salt.dat");
 
     //  method to verify a username and password combination
     public static boolean verifyLogin(final String username, final String password) {
