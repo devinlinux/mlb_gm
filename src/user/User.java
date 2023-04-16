@@ -26,7 +26,6 @@ public class User implements java.io.Serializable {
         this.team = team;
     }
 
-
     /* toString */
     public String toString() {
         if (team == null)
