@@ -11,9 +11,15 @@ public class User implements java.io.Serializable {
     private final String USERNAME;
     private Team team;
 
+    /* constructor */
     public User(String username) {
         this.USERNAME = username;
         this.team = null;
+    }
+
+    /* methods */
+    public void writeInformation() {
+        
     }
 
     /* getters */
