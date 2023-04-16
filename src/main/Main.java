@@ -12,6 +12,8 @@ import java.io.Console;
 public class Main {
     
     public static void main(String[] args) {
+        Util.prepareConsole();
+
         Console console = System.console();
 
         User user = LoginControl.runCLI(console);

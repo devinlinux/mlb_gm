@@ -83,4 +83,18 @@ public final class Util {
             System.err.printf("Error sleeping the program: %s%n", e.getMessage());
         }
     }
+
+    //  method to prepare the console
+    public static void prepareConsole() {
+        String os = System.getProperty("os.name").toLowerCase();
+
+        try {
+            if (os.contains("windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else 
+                new ProcessBuilder("bash", "-c", "clear").inheritIO().start().waitFor();
+        } catch (IOException | InterruptedException e) {
+            System.err.printf("Error preparing console: %s%n", e.getMessage());
+        }
+    }
 }
