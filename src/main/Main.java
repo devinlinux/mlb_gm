@@ -17,6 +17,7 @@ public class Main {
         Console console = System.console();
 
         User user = LoginControl.runCLI(console);
+        Util.clearConsole();
         Team team = TeamCreation.runCLI(console);
 
         user.setTeam(team);
