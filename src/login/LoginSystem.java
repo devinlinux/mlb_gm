@@ -97,8 +97,4 @@ public final class LoginSystem {
             return sb.toString();
         }        
     }
-
-    public static void main(String[] args) {
-        createUser("hello", "$aBcdefghijklmnopq");
-    }
 }
