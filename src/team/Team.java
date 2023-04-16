@@ -45,9 +45,11 @@ public class Team implements java.io.Serializable {
     public boolean equals(Object other) {
         if (other != null && other instanceof Team otherTeam)
             return this.TEAM == otherTeam.TEAM;
+        return false;
     }
 
     /* toString */
+    @Override
     public String toString() {
         return this.getFullName();
     }

@@ -38,6 +38,7 @@ public class User implements java.io.Serializable {
     }
 
     /* toString */
+    @Override
     public String toString() {
         if (team == null)
             return String.format("%s", this.USERNAME);
