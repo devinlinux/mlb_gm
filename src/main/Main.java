@@ -21,8 +21,5 @@ public class Main {
 
         System.out.printf("%s%n%s%n", user, team);
         Util.writeUserInformation(user);
-
-        User test = Util.readUserInformation(user.getUsername());
-        System.out.printf("%b%n", test.equals(user));
     }
 }
