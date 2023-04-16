@@ -14,7 +14,7 @@ public final class LoginControl {
     private static final int MAX_LOGIN_ATTEMPTS = 4;
 
     //  method to handle the login/creation of an account
-    public static User run() {
+    public static User runCLI() {
         Console console = System.console();
 
         if (console == null) {
