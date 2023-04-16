@@ -15,4 +15,9 @@ public class User {
     public String getUsername() {
         return this.USERNAME;
     }
+
+    /* toString */
+    public String toString() {
+        return String.format("%s", this.USERNAME);
+    }
 }
