@@ -48,6 +48,7 @@ public final class PasswordUtils {
         if (password == null || password.equals("")) throw new PasswordException(PasswordError.NULL_OR_EMPTY);
         if (password.length() < MINIMUM_PASSWORD_LENGTH) throw new PasswordException(PasswordError.LENGTH_TOO_SHORT);
         if (password.length() > MAXIMUM_PASSWORD_LENGTH) throw new PasswordException(PasswordError.LENGTH_TOO_LONG);
+        if (password.contains(" ")) throw new PasswordException(PasswordError.ILLEGAL_WHITESPACE);
 
         boolean hasUppercase = password.chars().anyMatch(c -> UPPERCASE_LETTERS.contains(Character.toString((char) c)));
         boolean hasLowercase = password.chars().anyMatch(c -> LOWERCASE_LETTERS.contains(Character.toString((char) c)));

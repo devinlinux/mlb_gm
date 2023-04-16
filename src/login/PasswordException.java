@@ -8,7 +8,8 @@ public class PasswordException extends Exception {
         LENGTH_TOO_LONG("Password length must be less than 10001 characters"),
         MISSING_UPPERCASE_LETTER("Password must contain at least 1 uppercase letter"),
         MISSING_LOWERCASE_LETTER("Password must contain at least 1 lowercase letter"),
-        MISSING_SYMBOL("Password must contain at least 1 symbol");
+        MISSING_SYMBOL("Password must contain at least 1 symbol"),
+        ILLEGAL_WHITESPACE("Password cannot contain a space");
 
         private final String MESSAGE;
 
