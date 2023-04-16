@@ -3,6 +3,7 @@ package login;
 //  imports
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,9 +17,10 @@ public final class LoginSystem {
     private LoginSystem() {}
 
     /* method to create account */
-    private static final String USERNAME_FILE_PATH = "data/users/usernames.dat";
-    private static final String PASSWORD_FILE_PATH = "data/users/passwords.dat";
-    private static final String SALT = SaltReader.readSalt("resources/salt.dat");
+    private static final String SEP = File.separator;
+    private static final String USERNAME_FILE_PATH = String.format("data%susers%susernames.dat", SEP, SEP);
+    private static final String PASSWORD_FILE_PATH = String.format("data%susers%spasswords.dat", SEP, SEP);
+    private static final String SALT = SaltReader.readSalt(String.format("resources%ssalt.dat", SEP));
 
     //  method to verify a username and password combination
     public static boolean verifyLogin(final String username, final String password) {
