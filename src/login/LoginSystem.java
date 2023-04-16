@@ -85,15 +85,19 @@ public final class LoginSystem {
         private EncryptionUtil() {}
 
         private static String hashWithSalt(final String password, final String salt) throws NoSuchAlgorithmException {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            MessageDigest md = MessageDigest.getInstance("SHA3-512");
             md.update(salt.getBytes(StandardCharsets.UTF_8));
             byte[] saltedBytes = md.digest(password.getBytes(StandardCharsets.UTF_8));
 
-            md.reset();
-            byte[] digest = md.digest(saltedBytes);
+            for (int i = 0; i < 56909; i++) {
+                md.reset();
+                saltedBytes = md.digest(saltedBytes);
+            }
+
             StringBuilder sb = new StringBuilder();
-            for (byte b : digest) 
+            for (byte b : saltedBytes) 
                 sb.append(String.format("%02x", b & 0xff));
+
             return sb.toString();
         }        
     }
