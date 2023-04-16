@@ -40,6 +40,13 @@ public class Team implements java.io.Serializable {
         return String.format("%d-%d", this.wins, this.losses);
     }
 
+    /* equals */
+    @Override
+    public boolean equals(Object other) {
+        if (other != null && other instanceof Team otherTeam)
+            return this.TEAM == otherTeam.TEAM;
+    }
+
     /* toString */
     public String toString() {
         return this.getFullName();

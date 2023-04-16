@@ -29,6 +29,14 @@ public class User implements java.io.Serializable {
         this.team = team;
     }
 
+    /* equals */
+    @Override
+    public boolean equals(Object other) {
+        if (other != null && other instanceof User otherUser)
+            return this.USERNAME.equals(otherUser.USERNAME) && this.team.equals(otherUser.team);
+        return false;
+    }
+
     /* toString */
     public String toString() {
         if (team == null)
