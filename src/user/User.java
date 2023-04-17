@@ -8,6 +8,7 @@ import team.Team;
 public class User implements java.io.Serializable {
     
     /* fields and constants */
+    @java.io.Serial
     private static final long serialVersionUID = 202304161740L;
 
     private final String USERNAME;

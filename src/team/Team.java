@@ -3,6 +3,7 @@ package team;
 public class Team implements java.io.Serializable {
 
     /* fields and constants */
+    @java.io.Serial
     private static final long serialVersionUID = 202304161739L;
 
     private final MLBTeam TEAM;
