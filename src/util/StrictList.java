@@ -1,6 +1,9 @@
 package util;
 
-public class StrictList<E> implements java.io.Serializable {
+//  imports
+import java.util.Arrays;
+
+public class StrictList<E extends Comparable<E>> implements java.io.Serializable {
     
     /* fields and constants */
     @java.io.Serial
@@ -91,6 +94,8 @@ public class StrictList<E> implements java.io.Serializable {
         return true;
     }
 
-    //  add method to sort, also make similar to Set - no duplicates
-
+    //  method to sort the array by using the compareTo method
+    public void sort() {
+        Arrays.sort(elementData);
+    }
 }
