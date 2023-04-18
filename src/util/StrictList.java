@@ -65,18 +65,22 @@ public class StrictList<E> implements java.io.Serializable {
     }
 
     //  method to add an element to the end of the StrictList
-    public boolean add(E element) throws StrictListSizeException {
+    public boolean add(E element) throws StrictListSizeException, StrictListContainsException {
         if (size == elementData.length) 
             throw new StrictListSizeException(this.MAXIMUM_CAPACITY);
+        if (contains(element))
+            throw new StrictListContainsException(element);
         elementData[size] = element;
         size++;
         return true;
     }
 
     //  method to insert an element at a specific position in this StrictList
-    public boolean add(int index, E element) throws StrictListSizeException {
+    public boolean add(int index, E element) throws StrictListSizeException, StrictListContainsException {
         if (size == this.elementData.length)
             throw new StrictListSizeException(this.MAXIMUM_CAPACITY);
+        if (contains(element))
+            throw new StrictListContainsException(element);
         Object[] elementData = new Object[this.elementData.length];
         for (int i = 0; i < index; i++) 
             elementData[i] = this.elementData[i];
