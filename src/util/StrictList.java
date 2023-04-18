@@ -87,4 +87,6 @@ public class StrictList<E> implements java.io.Serializable {
         return true;
     }
 
+    //  add method to sort, also make similar to Set - no duplicates
+
 }
